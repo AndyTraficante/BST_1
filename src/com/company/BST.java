@@ -54,23 +54,6 @@ public class BST {
         }
 
 
-    private void traverseLeft(Node traverseNode) {
-      /*  while (traverseNode != null) {
-            System.out.println(traverseNode.val);
-            if (traverseNode.left != null) {
-               traverseNode =  traverseNode.left;
-            }else{
-                System.out.println(traverseNode.val);
-            }
-            if (traverseNode.right != null);
-        } */
-    }
-    private void traverseRight(Node traverseNode){
-        while (traverseNode.left != null) {
-            System.out.println(traverseNode.val);
-            traverseNode = traverseNode.left;
-        }
-    }
 
         public void preOrderTraversal(Node checkNode) {
             if(!checkNode.hasGoneLeft && !checkNode.hasGoneRight) {
@@ -89,66 +72,6 @@ public class BST {
                     preOrderTraversal(checkNode.upLeft);
                 }
 
-
-
-
-/*
-                if (checkNode.upRight != null) {
-                    if (checkNode.upRight.right != null) {
-                        System.out.println("hello!");
-                        preOrderTraversal(checkNode.upRight.right);
-                    }
-                   // preOrderTraversal(upRight);
-                }
-                if (checkNode.upLeft != null) {
-                    if (checkNode.upLeft.upRight != null) {
-                        if (checkNode.upLeft.upRight.right != null) {
-                            System.out.println("hello!");
-                            preOrderTraversal(checkNode.upLeft.upRight.right);
-                        }
-                    }
-                }
-            }
-
-                }if(checkNode.upRight.right == null) {
-
-                        System.out.println("hello!");
-                        preOrderTraversal(checkNode.upRight.right);
-
-                }
-
- */
-
-
-                //nLR
-                // Node traverseNode = root;
-
-                //traverseLeft(traverseNode);
-
-
-            /*
-            if(root != null){
-              //  Node traverseNode = root;
-
-                System.out.println(root);
-
-                traverseNode = root.left;
-                System.out.println(traverseNode);
-
-                traverseLeft(traverseNode);
-
-                if(traverseNode.left.left == null){
-                    System.out.println(traverseNode);
-                    if(traverseNode.left.right != null ){
-
-
-                    }
-                }
-
-            }
-            */
-
-
             }
         }
 
@@ -157,9 +80,28 @@ public class BST {
         }
 
 
-        public void inOrderTraversal() {
+        public void inOrderTraversal(Node checkNode) {
+            if (checkNode.left != null && !checkNode.hasGoneLeft) {
+                checkNode.hasGoneLeft = true;
+                inOrderTraversal(checkNode.left);
+            }
 
+            if ((checkNode.left == null && !checkNode.hasGoneRight) || checkNode.hasGoneLeft && !checkNode.hasGoneRight) {
+                System.out.println(checkNode.val);
+            }
+            if (checkNode.right != null && !checkNode.hasGoneRight) {
+                checkNode.hasGoneRight = true;
+                inOrderTraversal(checkNode.right);
+            } else if ((checkNode.hasGoneRight && checkNode.hasGoneLeft) || (checkNode.left == null && checkNode.right == null) || (checkNode.right == null && checkNode.hasGoneLeft)) {
+                if (checkNode.upRight != null) {
+                    checkNode.hasGoneRight = true;
+                    inOrderTraversal(checkNode.upRight);
+                } else if (checkNode.upLeft != null) {
+                    inOrderTraversal(checkNode.upLeft);
+                }
+            }
         }
+
 
 
         public void postOrderTraversal() {
@@ -171,6 +113,7 @@ public class BST {
         }
 
         public void clear() {
+            root = null;
 
         }
 

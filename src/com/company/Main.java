@@ -12,13 +12,15 @@ public class Main {
         test.add(35);
         test.add(37);
         test.add(25);
-        test.add(36);
+        test.add(34);
         test.add(50);
         test.add(60);
 
         System.out.println("traversal:");
         System.out.println();
-        test.preOrderTraversal(test.root);
+        //test.preOrderTraversal(test.root);
+
+        test.inOrderTraversal((test.root));
 
         //System.out.println(test.root);
 
