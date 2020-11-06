@@ -13,6 +13,8 @@ public class Main {
         test.add(37);
         test.add(25);
         test.add(36);
+        test.add(50);
+        test.add(60);
 
         System.out.println("traversal:");
         System.out.println();

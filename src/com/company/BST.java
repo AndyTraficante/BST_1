@@ -86,13 +86,9 @@ public class BST {
                 if (checkNode.upRight != null) {
                     preOrderTraversal(checkNode.upRight);
                 } else if (checkNode.upLeft != null) {
-                    checkNode = checkNode.upLeft;
+                    preOrderTraversal(checkNode.upLeft);
                 }
-                if (checkNode.upLeft != null) {
-                    preOrderTraversal(checkNode.upRight);
-                } else if (checkNode.upLeft != null) {
-                    checkNode = checkNode.upLeft;
-                }
+
 
 
 
