@@ -20,7 +20,7 @@ public class Main {
         System.out.println();
         //test.preOrderTraversal(test.root);
 
-        test.inOrderTraversal((test.root));
+        test.postOrderTraversal(test.root);
 
         //System.out.println(test.root);
 
