@@ -21,7 +21,7 @@ public class Main {
         //test.preOrderTraversal(test.root);
 
         //test.postOrderTraversal(test.root);
-        test.remove(35);
+        test.remove(34);
         test.postOrderTraversal(test.root);
 
         //System.out.println(test.root);
