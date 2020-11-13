@@ -20,6 +20,8 @@ public class Main {
         System.out.println();
         //test.preOrderTraversal(test.root);
 
+        //test.postOrderTraversal(test.root);
+        test.remove(35);
         test.postOrderTraversal(test.root);
 
         //System.out.println(test.root);
