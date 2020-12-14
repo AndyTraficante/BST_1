@@ -1,5 +1,7 @@
 package com.company;
 
+import javafx.scene.Node;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -21,8 +23,9 @@ public class Main {
         //test.preOrderTraversal(test.root);
 
         //test.postOrderTraversal(test.root);
-        test.remove(34);
-        test.postOrderTraversal(test.root);
+       // test.remove(34);
+        System.out.println(test.find(60));
+
 
         //System.out.println(test.root);
 
