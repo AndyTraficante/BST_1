@@ -24,7 +24,7 @@ public class Main {
 
         //test.postOrderTraversal(test.root);
        // test.remove(34);
-        System.out.println(test.find(60));
+        test.breadthFirstSearch(test.root);
 
 
         //System.out.println(test.root);
